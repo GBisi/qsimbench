@@ -11,3 +11,6 @@ wheels/
 
 # MacOS files
 .DS_Store
+
+# Application files
+mongo_data/

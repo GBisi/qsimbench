@@ -14,9 +14,7 @@ from sacred.observers import MongoObserver
 from dotenv import load_dotenv
 from pymongo import MongoClient
 import psutil
-from typing import TYPE_CHECKING
-if TYPE_CHECKING:
-    from qiskit import QuantumCircuit
+from typing import Any
 
 # ── Load environment ──────────────────────────────────────────────────
 load_dotenv()
@@ -100,7 +98,7 @@ def load_qasm_from_mongo(circuit_name: str, size: int, db_name="quantum_circuit"
     return qc, mirror_qc
 
 @ex.capture
-def run_batch(qc: QuantumCircuit, mirror_qc: QuantumCircuit, shots: int, executor: QuantumExecutor, backends: dict, max_retries: int = 1, _log=None):
+def run_batch(qc: Any, mirror_qc: Any, shots: int, executor: Any, backends: dict, max_retries: int = 1, _log=None):
     for _ in range(max_retries):
         try:
             job_data = executor.run_experiment(qc.copy(), shots, backends, "multiplier", multiprocess=False, wait=True)

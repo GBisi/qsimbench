@@ -1430,14 +1430,18 @@ source = { virtual = "." }
 dependencies = [
     { name = "pymongo" },
     { name = "python-dotenv" },
+    { name = "pyyaml" },
     { name = "quantum-executor" },
+    { name = "sacred" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "pymongo", specifier = ">=4.13.2" },
     { name = "python-dotenv", specifier = ">=1.1.0" },
+    { name = "pyyaml", specifier = ">=6.0.2" },
     { name = "quantum-executor", specifier = ">=0.1.0" },
+    { name = "sacred", specifier = ">=0.8.7" },
 ]
 
 [[package]]

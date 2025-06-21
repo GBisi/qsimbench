@@ -1,3 +1,13 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "mqt-bench",
+#     "pymongo",
+#     "python-dotenv",
+#     "qiskit<2",
+# ]
+# ///
+
 from pymongo import MongoClient
 
 from mqt.bench import get_benchmark
@@ -9,9 +19,8 @@ from pymongo import MongoClient
 
 from dotenv import load_dotenv
 from pathlib import Path
-dotenv_path = Path(__file__).parent.parent.parent / "src" / ".env"
-print("Loading environment variables from:", dotenv_path)
-load_dotenv(dotenv_path=dotenv_path)
+
+load_dotenv()
 
 MONGO_HOST = 'localhost'
 MONGO_PORT = 27017
@@ -32,7 +41,7 @@ collection = db[COLLECTION_NAME]
 
 if __name__ == '__main__':
     algs = ['dj', 'grover-noancilla', 'ghz', 'qaoa', 'qft', 'qnn', 'qpeexact', 'qwalk-noancilla', 'random', 'realamprandom', 'su2random', 'twolocalrandom', 'vqe', 'wstate']
-    max_qubits = 20
+    max_qubits = 15
     for n in range(4, max_qubits + 1):
         for alg in algs:
             print(f"Serializing benchmark for {alg} with {n} qubits")
@@ -74,4 +83,5 @@ if __name__ == '__main__':
             except Exception as e:
                 print(f"Error inserting benchmark for {alg} with {n} qubits: {e}")
                 
+
 

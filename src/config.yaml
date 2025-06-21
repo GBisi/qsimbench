@@ -3,7 +3,7 @@ parallel:
   load_buffer: 16
   memfree: "'16GB'"
   memsuspend: "'6GB'"
-  delay: 10
+  delay: 300
   joblog: parallel.log
   results: results
   flags: ["linebuffer", "progress"]
