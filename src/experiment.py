@@ -150,6 +150,7 @@ def main(circuit, size, backend, shots, batch_size, providers, n_cores, _run, _l
     
     logging.getLogger('qiskit').setLevel(logging.WARNING)
     logging.getLogger('quantum_executor').setLevel(logging.WARNING)
+    logging.getLogger('qbraid').setLevel(logging.WARNING)
     
     qc, mirror_qc = load_qasm_from_mongo(circuit, size)
     executor = QuantumExecutor(providers=providers)
