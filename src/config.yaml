@@ -12,4 +12,4 @@ params:
   circuit: ['dj', 'grover-noancilla', 'ghz', 'qaoa', 'qft', 'qnn', 'qpeexact', 'qwalk-noancilla', 'random', 'realamprandom', 'su2random', 'twolocalrandom', 'vqe', 'wstate']
   size: [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4]
   backend: ["aer_simulator", "fake_fez", "fake_marrakesh", "fake_sherbrooke", "fake_torino", "fake_kyiv"]
-  n_cores: [5]
+  n_cores: [4]

@@ -15,6 +15,8 @@ from dotenv import load_dotenv
 from pymongo import MongoClient
 import psutil
 from typing import Any
+import logging
+
 
 # ── Load environment ──────────────────────────────────────────────────
 load_dotenv()
@@ -85,6 +87,7 @@ def monitor_stats(interval=1.0):
 # ── Helpers ──────────────────────────────────────────
 @ex.capture
 def load_qasm_from_mongo(circuit_name: str, size: int, db_name="quantum_circuit", collection_name="mqt.bench==1.1.9", mongo_uri=None, _run=None):
+    from qiskit import QuantumCircuit
     db_qc = client[db_name]
     col = db_qc.get_collection(collection_name)
     query = {"_id": f"{circuit_name}_{size}"}
@@ -145,6 +148,8 @@ def main(circuit, size, backend, shots, batch_size, providers, n_cores, _run, _l
     from quantum_executor import QuantumExecutor
     from qiskit import QuantumCircuit
     
+    logging.getLogger('qiskit').setLevel(logging.WARNING)
+    logging.getLogger('quantum_executor').setLevel(logging.WARNING)
     
     qc, mirror_qc = load_qasm_from_mongo(circuit, size)
     executor = QuantumExecutor(providers=providers)

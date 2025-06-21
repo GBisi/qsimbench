@@ -1,1 +1,0 @@
-Connecting to MongoDB at mongodb://mongo_user:mongo_password@131.114.72.84:27017/?authSource=admin

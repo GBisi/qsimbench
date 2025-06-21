@@ -1,49 +1,0 @@
-[2025-06-21 17:46:57] [INFO] Machine info:
-[2025-06-21 17:46:57] [INFO]   Hostname: qbig
-[2025-06-21 17:46:57] [INFO]   OS: Linux 6.8.0-59-generic
-[2025-06-21 17:46:57] [INFO]   CPU: Intel(R) Xeon(R) Gold 5120 CPU @ 2.20GHz
-[2025-06-21 17:46:57] [INFO]   Cores: 32
-[2025-06-21 17:46:57] [INFO]   Total Memory: 31Gi
-[2025-06-21 17:46:57] [INFO] Using directory: /home/local/ADUNIPI/g.bisicchia/qbenchsim/src
-[2025-06-21 17:46:57] [INFO] Logging run in: /home/local/ADUNIPI/g.bisicchia/qbenchsim/src/logs/2025-06-21_17-46-57
-[2025-06-21 17:46:57] [INFO] Found experiment.py and config.yaml
-[2025-06-21 17:46:57] [INFO] Generating parameter combinations...
-[2025-06-21 17:46:57] [INFO] Written job list to /home/local/ADUNIPI/g.bisicchia/qbenchsim/src/logs/2025-06-21_17-46-57/jobs.txt
-[2025-06-21 17:46:57] [INFO] Reading parallel configuration...
-[2025-06-21 17:46:57] [INFO] Parallel configuration:
-[2025-06-21 17:46:57] [INFO]   jobs       = 8
-[2025-06-21 17:46:57] [INFO]   load_buffer= 16
-[2025-06-21 17:46:57] [INFO]   memfree    = '16GB'
-[2025-06-21 17:46:57] [INFO]   memsuspend = '6GB'
-[2025-06-21 17:46:57] [INFO]   delay      = 300
-[2025-06-21 17:46:57] [INFO]   joblog     = /home/local/ADUNIPI/g.bisicchia/qbenchsim/src/logs/2025-06-21_17-46-57/parallel.log
-[2025-06-21 17:46:57] [INFO]   flags      = --linebuffer --progress 
-[2025-06-21 17:46:57] [INFO] Creating per-job output folders...
-[2025-06-21 17:47:11] [INFO] Updated latest symlink to /home/local/ADUNIPI/g.bisicchia/qbenchsim/src/logs/2025-06-21_17-46-57
-[2025-06-21 17:47:11] [INFO] Full parallel command to be executed:
-[2025-06-21 17:47:11] [INFO] cd "/home/local/ADUNIPI/g.bisicchia/qbenchsim/src" && parallel  --jobs "8" --load "16" --memfree "'16GB'" --memsuspend "'6GB'" --delay "300" --joblog "/home/local/ADUNIPI/g.bisicchia/qbenchsim/src/logs/2025-06-21_17-46-57/parallel.log" --linebuffer --progress  < "/home/local/ADUNIPI/g.bisicchia/qbenchsim/src/logs/2025-06-21_17-46-57/jobs_wrapped.txt"
-[2025-06-21 17:47:11] [INFO] Monitoring system stats every 60 seconds into /home/local/ADUNIPI/g.bisicchia/qbenchsim/src/logs/2025-06-21_17-46-57/stats.csv
-[2025-06-21 17:47:11] [INFO] Launching parallel execution...
-
-Computers / CPU cores / Max jobs to run
-1:local / 32 / 8
-
-Computer:jobs running/jobs completed/%of started jobs/Average seconds to complete
-local:1/0/100%/0.0s timestamp,%cpu,%mem,elapsed
-local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s Connecting to MongoDB at mongodb://mongo_user:mongo_password@131.114.72.84:27017/?authSource=admin
-INFO - run_experiments - Running command 'main'
-local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s INFO - run_experiments - Started run with ID "1"
-INFO - main - Using up to 5 CPU cores out of 32 available.
-local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s INFO - azure.quantum - version: 2.2.0
-local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s INFO - qiskit.passmanager.base_tasks - Pass: UnrollCustomDefinitions - 0.22554 (ms)
-INFO - qiskit.passmanager.base_tasks - Pass: BasisTranslator - 0.08368 (ms)
-local:1/0/100%/0.0s ERROR - run_experiments - Failed after 0:00:18!
-Traceback (most recent calls WITHOUT Sacred internals):
-  File "/home/local/ADUNIPI/g.bisicchia/qbenchsim/src/experiment.py", line 149, in main
-    qc, mirror_qc = load_qasm_from_mongo(circuit, size)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/local/ADUNIPI/g.bisicchia/qbenchsim/src/experiment.py", line 93, in load_qasm_from_mongo
-    raise FileNotFoundError(f"No circuit found in Mongo for {query}")
-FileNotFoundError: No circuit found in Mongo for {'_id': 'dj_15'}
-
-local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:1/0/100%/0.0s local:0/1/100%/21.0s 

@@ -1,2 +1,0 @@
-timestamp,cpu_usage_percent,cpu_idle_percent,load_avg_1min,mem_used_MB,mem_total_MB,swap_used_MB,disk_used_percent
-2025-06-21 17:47:11,4.5,95.5,0.71,2606,32052,72,24
