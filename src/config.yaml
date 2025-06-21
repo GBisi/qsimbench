@@ -1,0 +1,15 @@
+parallel:
+  jobs: 8
+  load_buffer: 16
+  memfree: "'16GB'"
+  memsuspend: "'6GB'"
+  delay: 10
+  joblog: parallel.log
+  results: results
+  flags: ["linebuffer", "progress"]
+
+params:
+  circuit: ['dj', 'grover-noancilla', 'ghz', 'qaoa', 'qft', 'qnn', 'qpeexact', 'qwalk-noancilla', 'random', 'realamprandom', 'su2random', 'twolocalrandom', 'vqe', 'wstate']
+  size: [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4]
+  backend: ["aer_simulator", "fake_fez", "fake_marrakesh", "fake_sherbrooke", "fake_torino", "fake_kyiv"]
+  n_cores: [5]
