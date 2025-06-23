@@ -1,9 +1,9 @@
 parallel:
-  jobs: 8
-  load_buffer: 16
-  memfree: 16GB
-  memsuspend: 6GB
-  delay: 300
+  jobs: 24
+  load: 24
+  memfree: '12G'
+  memsuspend: '4G'
+  delay: '180s'
   joblog: parallel.log
   results: results
   flags: ["linebuffer", "progress"]

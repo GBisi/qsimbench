@@ -223,7 +223,7 @@ read_yaml_value() {
 }
 
 JOBS=$(read_yaml_value jobs)
-BUFFER=$(read_yaml_value load_buffer)
+LOAD=$(read_yaml_value load)
 MEMFREE=$(read_yaml_value memfree)
 MEMSUSPEND=$(read_yaml_value memsuspend)
 DELAY=$(read_yaml_value delay)
@@ -251,7 +251,7 @@ fi
 ####################################
 log_info "Parallel configuration:"
 [[ -n "$JOBS" ]] && log_info "  jobs       = $JOBS"
-[[ -n "$BUFFER" ]] && log_info "  load_buffer= $BUFFER"
+[[ -n "$LOAD" ]] && log_info "  load        $LOAD"
 [[ -n "$MEMFREE" ]] && log_info "  memfree    = $MEMFREE"
 [[ -n "$MEMSUSPEND" ]] && log_info "  memsuspend = $MEMSUSPEND"
 [[ -n "$DELAY" ]] && log_info "  delay      = $DELAY"
@@ -316,7 +316,7 @@ log_info "Updated latest symlink to $RUN_LOG_DIR"
 ####################################
 PARALLEL_CMD="cd \"$FULL_FOLDER_PATH\" && parallel $DRY_RUN"
 [[ -n "$JOBS" ]] && PARALLEL_CMD+=" --jobs \"$JOBS\""
-[[ -n "$BUFFER" ]] && PARALLEL_CMD+=" --load \"$BUFFER\""
+[[ -n "$LOAD" ]] && PARALLEL_CMD+=" --load \"$LOAD\""
 [[ -n "$MEMFREE" ]] && PARALLEL_CMD+=" --memfree \"$MEMFREE\""
 [[ -n "$MEMSUSPEND" ]] && PARALLEL_CMD+=" --memsuspend \"$MEMSUSPEND\""
 [[ -n "$DELAY" ]] && PARALLEL_CMD+=" --delay \"$DELAY\""
