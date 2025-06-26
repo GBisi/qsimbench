@@ -14,3 +14,4 @@ wheels/
 
 # Application files
 mongo_data/
+*/logs/
