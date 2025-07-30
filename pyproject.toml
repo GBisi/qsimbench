@@ -1,6 +1,6 @@
 [project]
 name = "qsimbench"
-version = "0.1.0"
+version = "0.1.1"
 description = "QSimBench: An Execution-Level Benchmark Suite for Quantum Software Engineering"
 readme = "README.md"
 authors = [
