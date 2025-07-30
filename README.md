@@ -176,6 +176,68 @@ Each **(algorithm, size, backend)** combination in QSimBench is backed by thousa
 * You can *instantly* reproduce or extend published experiments — no more re-running expensive or non-deterministic jobs.
 * Full metadata (circuits, noise models, configs) enables transparency and in-depth research.
 
+## Troubleshooting
+
+### 🛑 403 Error: "Rate limit exceeded" or "GitHub API error"
+
+If you encounter an error like:
+
+```
+QSimBenchError: GitHub API error: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/GBisi/qsimbench-dataset/contents/...
+```
+
+This means GitHub is rejecting unauthenticated requests due to rate limits. GitHub allows only **60 unauthenticated requests per hour** per IP.
+
+To raise this limit to **5,000/hour**, you need to authenticate using a **GitHub Personal Access Token (PAT)**.
+
+### ✅ Solution: Provide a GitHub Token
+
+You can set the token using **either** an environment variable or a `.env` file.
+
+#### Option 1: Export an environment variable
+
+```bash
+export GITHUB_TOKEN=ghp_your_actual_token_here
+python your_script.py
+```
+
+#### Option 2: Use a `.env` file with `python-dotenv`
+
+1. Create a file named `.env` in your project root:
+
+   ```
+   GITHUB_TOKEN=ghp_your_actual_token_here
+   ```
+
+2. Install the package:
+
+   ```bash
+   pip install python-dotenv
+   ```
+
+3. Load the token at the start of your script:
+
+   ```python
+   from dotenv import load_dotenv
+   load_dotenv()
+   ```
+
+Then continue as usual.
+
+#### Verify that your token is working:
+
+```bash
+curl -H "Authorization: token YOUR_TOKEN" https://api.github.com/rate_limit
+```
+
+Check that `"limit": 5000` is returned.
+
+### Additional Tips
+
+* Make sure the token has `public_repo` scope (or `repo` if you're accessing private data).
+* Never commit your token or `.env` file to version control.
+* If you're still seeing 403s, add short delays (`time.sleep(0.1)`) between many API requests.
+
 ## Citing QSimBench
 
 If you use QSimBench in your research, please cite:

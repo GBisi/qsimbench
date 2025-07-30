@@ -31,8 +31,15 @@ logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
 
 # ---------------------------------------------------------------------------
-# HTTP retry strategy
+# HTTP client configuration
 # ---------------------------------------------------------------------------
+# Authentication header injection for GitHub API
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN") or None
+AUTH_HEADERS = {}
+if GITHUB_TOKEN:
+    AUTH_HEADERS["Authorization"] = f"token {GITHUB_TOKEN}"
+
+# Retry strategy same as before
 _RETRY_STRATEGY = Retry(
     total=3,
     backoff_factor=1,
@@ -40,6 +47,13 @@ _RETRY_STRATEGY = Retry(
     allowed_methods={"GET"},
 )
 _HTTP_ADAPTER = HTTPAdapter(max_retries=_RETRY_STRATEGY)
+
+# Shared HTTP session with retries
+_SESSION = requests.Session()
+_SESSION.headers.update({"Accept": "application/vnd.github+json"})
+_SESSION.headers.update(AUTH_HEADERS)
+_SESSION.mount("https://", _HTTP_ADAPTER)
+_SESSION.mount("http://", _HTTP_ADAPTER)
 
 # ---------------------------------------------------------------------------
 # Defaults & globals
@@ -65,12 +79,6 @@ CACHE_TIMEOUT: int = DEFAULT_CACHE_TIMEOUT
 # Thread-safe cursor storage for sequential sampling
 _CURSORS: Dict[Tuple[str, int, str, str], int] = {}
 _CURSORS_LOCK = threading.RLock()
-
-# Shared HTTP session
-_SESSION = requests.Session()
-_SESSION.mount("https://", _HTTP_ADAPTER)
-_SESSION.mount("http://", _HTTP_ADAPTER)
-
 
 # ---------------------------------------------------------------------------
 # Configuration functions
